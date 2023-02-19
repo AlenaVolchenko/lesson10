@@ -1,0 +1,79 @@
+:root {
+  --color-accent: #35a6ff;
+  --color-accent-dark: #0082f7;
+  --color-dark: #333333;
+  --color-accent-light: #a8d2f1;
+  --color-white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.navbar li ul {
+  min-height: 200px;
+  position: absolute;
+  display: none;
+  width: inherit;
+}
+
+.navbar li ul li {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent-light);
+  position: relative;
+  min-width: 200px;
+}
+
+.navbar__list-first {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  background-color: var(--color-dark);
+  z-index: 1;
+  border-bottom: 5px solid var(--color-accent);
+}
+
+.navbar__list-second {
+  z-index: 2;
+  border-top: 4px solid transparent;
+}
+
+.navbar__list-third {
+  top: calc(100% - 50px);
+  left: 100%;
+  color: var(--color-white);
+  z-index: 3;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.25em 1em;
+  color: var(--color-white);
+  text-decoration: none;
+  min-height: 50px;
+}
+
+.navbar a:hover {
+  background-color: var(--color-accent-dark)
+}
+
+.navbar ul>li:hover>ul {
+  display: block;
+}
